@@ -1,0 +1,34 @@
+set(ICEPLAYER_CORE_API_VERSION "0.1.0")
+
+set(ICEPLAYER_CORE_ABI_VERSION "0.1.0")
+set(ICEPLAYER_CORE_ABI_MAJOR_VERSION "0")
+
+set(ICEPLAYER_CORE_SRC
+  Common.cxx
+)
+
+add_library(iceplayer_core SHARED ${ICEPLAYER_CORE_SRC})
+target_link_libraries(iceplayer_core pthread )
+set_target_properties(iceplayer_core PROPERTIES
+    VERSION ${ICEPLAYER_CORE_ABI_VERSION}
+    SOVERSION ${ICEPLAYER_CORE_ABI_MAJOR_VERSION}
+    LINK_FLAGS ${CMAKE_SHARED_LINKER_FLAGS}
+)
+
+if (ENABLE_STATIC)
+
+add_library(iceplayer_core-static STATIC ${ICEPLAYER_CORE_SRC})
+SET_TARGET_PROPERTIES(iceplayer_core-static PROPERTIES
+    OUTPUT_NAME "iceplayer_core"
+    PREFIX "lib"
+)
+
+install(TARGETS iceplayer_core-static
+    LIBRARY DESTINATION ${LIB_INSTALL_DIR}
+    ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+)
+endif (ENABLE_STATIC)
+install(TARGETS iceplayer_core
+    LIBRARY DESTINATION ${LIB_INSTALL_DIR}
+    ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+)
