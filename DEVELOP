@@ -19,7 +19,7 @@ vim:tw=0:ts=2:ft=text:norl:
   讨论一下，可以选用的语言有
     1.纯C
     2.CXX
-    3.C+Py(Py为插件使用)
+    3.C+Py(Py为插件使用) *(选中)
     4.CXX+Py
     5.混合C/C++
 
