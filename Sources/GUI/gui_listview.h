@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-#include "common.h"
+#include "../common.h"
 #include "gui.h"
 
 #ifndef __GUI_LISTVIEW_H

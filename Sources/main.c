@@ -21,10 +21,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, 
  * Boston, MA  02110-1301  USA
  */
-#include <gtk/gtk.h>
-#include "common.h"
-#include "gui.h"
-#include "config.h"
+#include <gmodule.h>
 
 /**
  * SECTION: main
@@ -38,23 +35,13 @@ static const gchar *module_name = "Main";
 
 int main(int argc, char **argv)
 {
-  print_programming("main()");
+  gchar *gui_module_path = g_module_build_path(".", "iceplayer_gui");
+  GModule *gui_mod = g_module_open(gui_module_path, G_MODULE_BIND_LAZY);
 
-  print_debug("Gtk::Init()");
-  gtk_init(&argc, &argv);
+	int (*ui_init_func)(int *, char ***);
+	g_module_symbol(gui_mod, "iceplayer_ui_init", (gpointer *)&ui_init_func);
+  ui_init_func(&argc, &argv);
 
-  bindtextdomain(PROG_NAME, "@localedir@");
-  bind_textdomain_codeset(PROG_NAME, "UTF-8");
-  textdomain(PROG_NAME);
-
-  print_debug("Config::Init()");
-  Config_init();
-
-  print_debug("GUI::Init()");
-  GUI_init();
-
-  print_debug("Gtk::Main::run()");
-  gtk_main();
 
   return 0;
 }

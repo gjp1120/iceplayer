@@ -22,7 +22,7 @@
  * Boston, MA  02110-1301  USA
  */
 #include "gui.h"
-#include "common.h"
+#include "../common.h"
 #include "about.h"
 #include "config.h"
 #include "signal.h"

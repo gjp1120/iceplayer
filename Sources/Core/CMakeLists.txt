@@ -4,7 +4,7 @@ set(ICEPLAYER_CORE_ABI_VERSION "0.1.0")
 set(ICEPLAYER_CORE_ABI_MAJOR_VERSION "0")
 
 set(ICEPLAYER_CORE_SRC
-  Common.cxx
+  main.c
 )
 
 add_library(iceplayer_core SHARED ${ICEPLAYER_CORE_SRC})

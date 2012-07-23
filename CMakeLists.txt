@@ -28,7 +28,7 @@ set(includedir  ${CMAKE_INSTALL_PREFIX}/include/iceplayer)
 set(CMAKE_C_FLAGS "-Wall ${CMAKE_C_FLAGS}")
 set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAG}")
 
-add_subdirectory(Core)
+add_subdirectory(Sources)
 #add_subdirectory(Backend)
 #add_subdirectory(Addon)
 #add_subdirectory(GUI)

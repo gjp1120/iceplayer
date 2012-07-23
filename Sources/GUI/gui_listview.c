@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "common.h"
+#include "../common.h"
 #include "gui_listview.h"
 
 /**
