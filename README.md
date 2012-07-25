@@ -28,9 +28,11 @@ iceplayer - Music Player
 
 VIM:
 
-    tabstop = 4
-    textwidth = 87
-    expandtab
+```vim
+    set tabstop = 4
+    set textwidth = 87
+    set expandtab
+```
 
 
 ###代码风格
@@ -56,14 +58,14 @@ VIM:
 + 每个文件开头都要有声明，包括GPL和文件功能
 + 每个头文件必须有保证只包含一次的宏
 
-<code>
-    #ifndef \_\_NAME\_H</br>
-    #define \_\_NAME_H
+```c
+    #ifndef __NAME_H
+    #define __NAME_H
 
     //...
 
     #endif /*__NAME_H*/
-</code>
+```
 
 ###函数
 + 复杂或有争议的代码要带有注释
